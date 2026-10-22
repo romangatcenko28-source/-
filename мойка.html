@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Автомойка</title>
+<style>
+    body{
+        background-image: url("5375448572687489970.jpg");
+         background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    }
+    .заголовок{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    right: 40px;
+    gap: 40px;
+    justify-content: flex-end;
+    }
+    .заголовок p:hover{
+        color: dodgerblue;
+    }
+    .кнопка button{
+        font-size: 50px;
+        background-color:rgba(4, 16, 56, 0.836);
+        color: white;
+        border-radius: 40px;  
+        border: 3px solid black;
+        transition:0.2s;
+    }
+    .кнопка{
+        color: white;
+        font-size: 13px;
+        width: fit-content;
+        border-radius: 10px;
+        padding: 5px;
+        text-align: center;
+    }
+    .кнопка button:hover{
+        background-color: green;
+        transform: scale(1.02);   
+    }
+    .блок-услуги{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .услуги-кузов{
+        position:relative;
+        top: 50px;
+        background-color: rgba(0, 0, 0, 0.404);
+        width: fit-content;
+        color: white;
+        padding: 5px;
+        font-size: 25px;
+        border-radius: 10px;
+        border: 2px solid black;
+        box-shadow: 10px 10px 10px black;
+        padding-top: 1px;
+    }
+    .услуги-салон{
+                position:relative;
+        top: 50px;
+        background-color: rgba(0, 0, 0, 0.404);
+        width: fit-content;
+        color: white;
+        padding: 5px;
+        font-size: 25px;
+        border-radius: 10px;
+        border: 2px solid black;
+        box-shadow: 10px 10px 10px black;
+        padding-top: 1px;
+        bottom: 10px;
+    
+    }
+</style>
+</head>
+<body>
+    
+    <div class="заголовок">
+        <p>Прайс-лист</p>
+        <p>Адрес</p>
+        <p>Контакты</p>
+        <p>График работы</p>
+    </div>
+    <div class="кнопка">
+      <button id="record">Записаться</button>
+      <P id="сообщение">Твоя машина снова сияет!</P>
+    </div>
+    <div class="блок-услуги">
+<div class="услуги-кузов">
+    <p> Мойка кузова — 500₽</p>
+    <p> Комплексная мойка — 1 000 ₽</p>
+    <p> Химчистка салона — 2 500 ₽</p>
+    <p>Полировка кузова — 3 500 ₽</p>
+    <p>Покрытие «Антидождь» — 1 200 ₽</p>
+</div>    
+<div class="услуги-салон">
+    <p>Уборка салона пылесосом — 400 ₽</p>
+    <p>Влажная уборка салона — 800 ₽</p>
+    <p>Химчистка сидений — 2 500 ₽</p>
+    <p>Полная химчистка салона — 5 000 ₽</p>
+    <p>Чистка и уход за пластиком — 600 ₽</p>
+</div>
+</div>
+<script>
+    
+</script>
+</body>
+</html>
