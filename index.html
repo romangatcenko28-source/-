@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -12,54 +12,58 @@
         }
 
         body {
-            margin: 0;
-            padding: 15px;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
             background-image: url("5375448572687489970.jpg");
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
-            color: white;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px;
         }
 
-        /* Верхнее меню */
+        /* Верхнее меню — как в оригинале */
         .заголовок {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px 25px;
-            margin-bottom: 35px;
-        }
-
-        .заголовок a {
             color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            position: relative;
+            justify-content: flex-end;
+            gap: 20px 40px;
+            margin-right: 25px;
         }
 
-        .заголовок a:hover {
+        .заголовок p {
+            cursor: pointer;
+        }
+
+        .заголовок p:hover {
             color: dodgerblue;
         }
 
-        /* Кнопка записи */
+        /* Кнопка записи — слева */
         .кнопка {
+            color: white;
+            font-size: 13px;
+            width: fit-content;
+            max-width: 100%;
+            border-radius: 10px;
+            padding: 5px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-top: 10px;
         }
 
         .кнопка button {
-            width: 100%;
-            max-width: 320px;
-            padding: 15px 20px;
-            font-size: 25px;
-            background-color: rgba(4, 16, 56, 0.9);
+            font-size: 50px;
+            background-color: rgba(4, 16, 56, 0.836);
             color: white;
-            border-radius: 25px;
-            border: 2px solid black;
-            cursor: pointer;
+            border-radius: 40px;
+            border: 3px solid black;
+            padding: 5px 15px;
+            max-width: 100%;
             transition: 0.2s;
+            cursor: pointer;
         }
 
         .кнопка button:hover {
@@ -67,81 +71,86 @@
             transform: scale(1.02);
         }
 
-        #сообщение {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        /* Блоки услуг */
+        /* Услуги — расположение как в оригинале */
         .блок-услуги {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
         }
 
         .услуги-кузов,
         .услуги-салон {
-            background-color: rgba(0, 0, 0, 0.72);
+            position: relative;
+            top: 50px;
+            background-color: rgba(0, 0, 0, 0.404);
+            width: fit-content;
+            max-width: 100%;
             color: white;
-            padding: 15px;
-            font-size: 18px;
-            border-radius: 12px;
+            padding: 5px;
+            padding-top: 1px;
+            font-size: 25px;
+            border-radius: 10px;
             border: 2px solid black;
-            box-shadow: 5px 5px 12px black;
-            min-width: 0;
+            box-shadow: 10px 10px 10px black;
         }
 
         .услуги-кузов p,
         .услуги-салон p {
-            margin: 12px 0;
-            line-height: 1.4;
+            margin: 16px 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Адаптация для телефонов */
+        /* Адаптация только для телефонов */
         @media (max-width: 600px) {
             body {
-                padding: 12px;
+                padding: 10px;
                 background-attachment: scroll;
             }
 
             .заголовок {
-                gap: 12px 18px;
-                margin-bottom: 25px;
-            }
-
-            .заголовок a {
+                justify-content: center;
+                gap: 5px 18px;
+                margin-right: 0;
                 font-size: 14px;
             }
 
-            .кнопка button {
-                font-size: 21px;
-                padding: 14px;
+            .заголовок p {
+                margin: 8px 0;
             }
 
-            #сообщение {
-                font-size: 16px;
+            .кнопка {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+
+            .кнопка button {
+                font-size: clamp(22px, 6vw, 32px);
+                padding: 12px 20px;
+                border-radius: 25px;
+            }
+
+            .кнопка p {
+                font-size: 14px;
             }
 
             .блок-услуги {
-                grid-template-columns: 1fr;
-                gap: 18px;
+                gap: 15px;
             }
 
             .услуги-кузов,
             .услуги-салон {
-                padding: 12px;
+                top: 10px;
+                width: 100%;
                 font-size: 16px;
+                padding: 10px;
+                overflow-wrap: break-word;
+                box-shadow: 5px 5px 8px black;
             }
 
             .услуги-кузов p,
             .услуги-салон p {
-                margin: 13px 0;
+                margin: 12px 0;
+                line-height: 1.4;
             }
         }
     </style>
@@ -149,22 +158,22 @@
 
 <body>
 
-    <nav class="заголовок">
-        <a href="#прайс">Прайс-лист</a>
-        <a href="#адрес">Адрес</a>
-        <a href="#контакты">Контакты</a>
-        <a href="#график">График работы</a>
-    </nav>
+    <div class="заголовок">
+        <p>Прайс-лист</p>
+        <p>Адрес</p>
+        <p>Контакты</p>
+        <p>График работы</p>
+    </div>
 
     <div class="кнопка">
         <button id="record">Записаться</button>
         <p id="сообщение">Твоя машина снова сияет!</p>
     </div>
 
-    <div class="блок-услуги" id="прайс">
+    <div class="блок-услуги">
+
         <div class="услуги-кузов">
-            <h3>Услуги кузова</h3>
-            <p>Мойка кузова — 500 ₽</p>
+            <p>Мойка кузова — 500₽</p>
             <p>Комплексная мойка — 1 000 ₽</p>
             <p>Химчистка салона — 2 500 ₽</p>
             <p>Полировка кузова — 3 500 ₽</p>
@@ -172,22 +181,21 @@
         </div>
 
         <div class="услуги-салон">
-            <h3>Услуги салона</h3>
-            <p>Уборка пылесосом — 400 ₽</p>
-            <p>Влажная уборка — 800 ₽</p>
+            <p>Уборка салона пылесосом — 400 ₽</p>
+            <p>Влажная уборка салона — 800 ₽</p>
             <p>Химчистка сидений — 2 500 ₽</p>
-            <p>Полная химчистка — 5 000 ₽</p>
-            <p>Уход за пластиком — 600 ₽</p>
+            <p>Полная химчистка салона — 5 000 ₽</p>
+            <p>Чистка и уход за пластиком — 600 ₽</p>
         </div>
+
     </div>
 
     <script>
         document.getElementById("record").addEventListener("click", function () {
             document.getElementById("сообщение").textContent =
-                "Позвоните нам, чтобы записаться!";
+                "Для записи свяжитесь с нами!";
         });
     </script>
 
 </body>
 </html>
-```
