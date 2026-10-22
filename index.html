@@ -1,112 +1,193 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Автомойка</title>
-<style>
-    body{
-        background-image: url("5375448572687489970.jpg");
-         background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    }
-    .заголовок{
-    color: white;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    right: 40px;
-    gap: 40px;
-    justify-content: flex-end;
-    }
-    .заголовок p:hover{
-        color: dodgerblue;
-    }
-    .кнопка button{
-        font-size: 50px;
-        background-color:rgba(4, 16, 56, 0.836);
-        color: white;
-        border-radius: 40px;  
-        border: 3px solid black;
-        transition:0.2s;
-    }
-    .кнопка{
-        color: white;
-        font-size: 13px;
-        width: fit-content;
-        border-radius: 10px;
-        padding: 5px;
-        text-align: center;
-    }
-    .кнопка button:hover{
-        background-color: green;
-        transform: scale(1.02);   
-    }
-    .блок-услуги{
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-    .услуги-кузов{
-        position:relative;
-        top: 50px;
-        background-color: rgba(0, 0, 0, 0.404);
-        width: fit-content;
-        color: white;
-        padding: 5px;
-        font-size: 25px;
-        border-radius: 10px;
-        border: 2px solid black;
-        box-shadow: 10px 10px 10px black;
-        padding-top: 1px;
-    }
-    .услуги-салон{
-                position:relative;
-        top: 50px;
-        background-color: rgba(0, 0, 0, 0.404);
-        width: fit-content;
-        color: white;
-        padding: 5px;
-        font-size: 25px;
-        border-radius: 10px;
-        border: 2px solid black;
-        box-shadow: 10px 10px 10px black;
-        padding-top: 1px;
-        bottom: 10px;
-    
-    }
-</style>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 15px;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-image: url("5375448572687489970.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        /* Верхнее меню */
+        .заголовок {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 25px;
+            margin-bottom: 35px;
+        }
+
+        .заголовок a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .заголовок a:hover {
+            color: dodgerblue;
+        }
+
+        /* Кнопка записи */
+        .кнопка {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .кнопка button {
+            width: 100%;
+            max-width: 320px;
+            padding: 15px 20px;
+            font-size: 25px;
+            background-color: rgba(4, 16, 56, 0.9);
+            color: white;
+            border-radius: 25px;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .кнопка button:hover {
+            background-color: green;
+            transform: scale(1.02);
+        }
+
+        #сообщение {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Блоки услуг */
+        .блок-услуги {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .услуги-кузов,
+        .услуги-салон {
+            background-color: rgba(0, 0, 0, 0.72);
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: 2px solid black;
+            box-shadow: 5px 5px 12px black;
+            min-width: 0;
+        }
+
+        .услуги-кузов p,
+        .услуги-салон p {
+            margin: 12px 0;
+            line-height: 1.4;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Адаптация для телефонов */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+                background-attachment: scroll;
+            }
+
+            .заголовок {
+                gap: 12px 18px;
+                margin-bottom: 25px;
+            }
+
+            .заголовок a {
+                font-size: 14px;
+            }
+
+            .кнопка button {
+                font-size: 21px;
+                padding: 14px;
+            }
+
+            #сообщение {
+                font-size: 16px;
+            }
+
+            .блок-услуги {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .услуги-кузов,
+            .услуги-салон {
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .услуги-кузов p,
+            .услуги-салон p {
+                margin: 13px 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
-    <div class="заголовок">
-        <p>Прайс-лист</p>
-        <p>Адрес</p>
-        <p>Контакты</p>
-        <p>График работы</p>
-    </div>
+
+    <nav class="заголовок">
+        <a href="#прайс">Прайс-лист</a>
+        <a href="#адрес">Адрес</a>
+        <a href="#контакты">Контакты</a>
+        <a href="#график">График работы</a>
+    </nav>
+
     <div class="кнопка">
-      <button id="record">Записаться</button>
-      <P id="сообщение">Твоя машина снова сияет!</P>
+        <button id="record">Записаться</button>
+        <p id="сообщение">Твоя машина снова сияет!</p>
     </div>
-    <div class="блок-услуги">
-<div class="услуги-кузов">
-    <p> Мойка кузова — 500₽</p>
-    <p> Комплексная мойка — 1 000 ₽</p>
-    <p> Химчистка салона — 2 500 ₽</p>
-    <p>Полировка кузова — 3 500 ₽</p>
-    <p>Покрытие «Антидождь» — 1 200 ₽</p>
-</div>    
-<div class="услуги-салон">
-    <p>Уборка салона пылесосом — 400 ₽</p>
-    <p>Влажная уборка салона — 800 ₽</p>
-    <p>Химчистка сидений — 2 500 ₽</p>
-    <p>Полная химчистка салона — 5 000 ₽</p>
-    <p>Чистка и уход за пластиком — 600 ₽</p>
-</div>
-</div>
-<script>
-    
-</script>
+
+    <div class="блок-услуги" id="прайс">
+        <div class="услуги-кузов">
+            <h3>Услуги кузова</h3>
+            <p>Мойка кузова — 500 ₽</p>
+            <p>Комплексная мойка — 1 000 ₽</p>
+            <p>Химчистка салона — 2 500 ₽</p>
+            <p>Полировка кузова — 3 500 ₽</p>
+            <p>Покрытие «Антидождь» — 1 200 ₽</p>
+        </div>
+
+        <div class="услуги-салон">
+            <h3>Услуги салона</h3>
+            <p>Уборка пылесосом — 400 ₽</p>
+            <p>Влажная уборка — 800 ₽</p>
+            <p>Химчистка сидений — 2 500 ₽</p>
+            <p>Полная химчистка — 5 000 ₽</p>
+            <p>Уход за пластиком — 600 ₽</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("record").addEventListener("click", function () {
+            document.getElementById("сообщение").textContent =
+                "Позвоните нам, чтобы записаться!";
+        });
+    </script>
+
 </body>
 </html>
+```
